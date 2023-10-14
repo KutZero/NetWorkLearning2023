@@ -1,0 +1,30 @@
+In cases where we need to define a lot of environmental variables and/or
+run a few containers we could use docker compose option.
+To use it we need to create an directory which contain all projects
+we want to lanch (with individual dockerfiles within) and a docker
+compose file named "docker-compose.yaml".
+
+docker-compose up - run docker compose
+	-d - run on a background
+docker-compose down - stop all composed containers
+
+docker-compose.yaml structure:
+
+version: <version>
+
+volumes:
+	<volume_name>:
+
+services:
+	<service_name>:
+		build: <path_to_project>
+		restart: <param>
+		environment:
+		-<env_variable_name>=<value>
+<image_name>:
+	image: <image_name>:<version>
+	ports:
+	-<outer_port_num>:<inter_port_num>
+	volumes:
+	- <volume_name>:<container_path>
+	restart: <option>

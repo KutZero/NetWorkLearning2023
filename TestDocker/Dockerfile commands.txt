@@ -1,0 +1,18 @@
+To create an image from a folder you shold create an docker
+config file named "Dockerfile" and define docker image
+parametres in it.
+
+FROM <name>:<version> - use an existing image as base of your
+	one with defined name and version
+RUN <command> - run command from linux or windows prompt
+	Example: RUN pip install --no-cache-dir -r <path_to_dependencies_list_file> - 
+		install all python dependencies
+WORKDIR <path> - change current workdir to path
+COPY <orig_path> <copy_path> - copy data or folder to copy path
+	Example: COPY . example_folder_name/ - copy all data
+		and folders from current folder to copy path
+CMD [<app_path>,<file_to_run_via_app>] - run file via given app
+EXPOSE <port_number> - declare than current container app works 
+	with given port within it
+ENV <name> <value> - define environmental variable
+

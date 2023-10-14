@@ -1,0 +1,9 @@
+Some python projects could have a massive list of dependencies
+which are not so convenient to download separatly via pip
+install command. 
+To overcome this difficulty programmers invented a way to download 
+all dependencies as packet. To use this method you need to create 
+a file containing a list of all dependencies your app need in format
+like "dependency_name==version<end line><next>".
+After that you can run "pip install -r 
+<path_to_dependencies_list_file>" to install all dependencies packetly.
